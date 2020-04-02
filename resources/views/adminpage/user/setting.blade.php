@@ -85,6 +85,16 @@
             toastr.error("  @foreach($errors->all() as $error) {{$error}} @endforeach");
             
         });
+
+        $(function(){
+        $("#username").on('keypress', function(e){
+            if(e.which==32)
+            {
+                toastr.error("Ngedit ngotak dikit tod, Username jangan ada space")
+                return false
+            }
+        });
+    });
     });
 
 </script>

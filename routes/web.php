@@ -1,5 +1,5 @@
 <?php
-
+use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeUserController@index');
+Route::get('/home', 'HomeUserController@index');
 
 Auth::routes();
 
@@ -21,8 +20,6 @@ Auth::routes();
 Route::resource('postingan','PostController');
 
 
-
-Route::resource('tags','TagsController');
 
 Route::resource('setting', 'SettingUserController');
 Route::resource('label','LabelController');

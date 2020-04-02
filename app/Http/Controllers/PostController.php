@@ -95,6 +95,12 @@ class PostController extends Controller
         return view('adminpage.post.editpost',compact('datapost','label','tags'));
     }
 
+    public function getUpdatedAtAttribute()
+    {
+        return \Carbon\Carbon::parse($this->attributes['created_at'])
+       ->diffForHumans();
+    }
+
     /**
      * Update the specified resource in storage.
      *
